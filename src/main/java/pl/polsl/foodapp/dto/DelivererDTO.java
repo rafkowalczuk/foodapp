@@ -9,7 +9,9 @@ import java.util.List;
 @GeneratePojoBuilder
 public class DelivererDTO extends EmployeeDTO {
 
-
+    /*public interface NewDelivererValidation {}
+*/
+    @JsonView(JsonViews.Extended.class)
     @Nullable
     private List<OrderDTO> orderDTOS;
 

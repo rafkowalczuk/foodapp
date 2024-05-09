@@ -12,6 +12,9 @@ import pl.polsl.foodapp.common.views.JsonViews;
 @Embeddable
 public class LogginDataDTO {
 
+
+
+    @JsonView(JsonViews.Basic.class)
     @Size(min = 3)
     private String login;
 

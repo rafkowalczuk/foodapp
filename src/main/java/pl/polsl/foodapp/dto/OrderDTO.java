@@ -17,59 +17,64 @@ import java.util.UUID;
 public class OrderDTO {
 
 
+   /* public interface OrderValidation {}
+    public interface OrderStatusValidation {}*/
+
+
+    @JsonView(JsonViews.Basic.class)
     @NotNull
     private UUID uuid;
 
-
+    @JsonView(JsonViews.Extended.class)
     @Digits(integer = 10, fraction = 2)
     @Min(0)
     @NotNull
     private BigDecimal nettoPrice;
 
-
+    @JsonView(JsonViews.Extended.class)
     @Digits(integer = 10, fraction = 2)
     @Min(0)
     @NotNull
     private BigDecimal bruttoPrice;
 
-
+    @JsonView(JsonViews.Extended.class)
     @Nullable
     private DiscountCodeDTO discountCodeDTO;
 
-
+    @JsonView(JsonViews.Extended.class)
     @Digits(integer = 10, fraction = 2)
     @Min(0)
     @NotNull
     private BigDecimal amountToPayBrutto;
 
-
+    @JsonView(JsonViews.Extended.class)
     @Nullable
     private String note;
 
 
-
+    @JsonView(JsonViews.Basic.class)
     @NotNull
     @Embedded
     private OrderStatusDTO orderStatusDTO;
 
-
+    @JsonView(JsonViews.Extended.class)
     @NotNull
     private DeliveryAddressDTO deliveryAddressDTO;
 
-
+    @JsonView(JsonViews.Extended.class)
     @NotNull
     @Size(min = 1)
     private List<OrderItemDTO> orderItemDTOS;
 
-
+    @JsonView(JsonViews.Basic.class)
     @NotNull
     private UserDTO user;
 
-
+    @JsonView(JsonViews.Basic.class)
     @NotNull
     private DelivererDTO delivererDTO;
 
-
+    @JsonView(JsonViews.Basic.class)
     @NotNull
     private RestaurantDTO restaurantDTO;
 

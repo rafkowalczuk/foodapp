@@ -11,26 +11,28 @@ import pl.polsl.foodapp.entity.enums.Sex;
 @Embeddable
 public class PersonalDataDTO {
 
+
+    @JsonView(JsonViews.Basic.class)
     @Nullable
     private String name;
 
-
+    @JsonView(JsonViews.Basic.class)
     @Nullable
     private String surname;
 
-
+    @JsonView(JsonViews.Extended.class)
     @Nullable
     private Sex sex;
 
-
+    @JsonView(JsonViews.Extended.class)
     @Nullable
     private String phone;
 
-
+    @JsonView(JsonViews.Extended.class)
     @Nullable
     private String email;
 
-
+    @JsonView(JsonViews.Basic.class)
     public String nameAndSurname() {
         return Joiner.on(" ").skipNulls().join(name, surname);
     }

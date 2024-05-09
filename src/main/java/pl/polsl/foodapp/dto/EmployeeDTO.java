@@ -12,20 +12,21 @@ import java.util.UUID;
 public class EmployeeDTO {
 
 
+    @JsonView(JsonViews.Basic.class)
     @NotNull
     private UUID uuid;
 
-
+    @JsonView(JsonViews.Basic.class)
     @NotNull
     @Embedded
     private PersonalDataDTO personalDataDTO;
 
-
+    @JsonView(JsonViews.Extended.class)
     @NotNull
     @Embedded
     private LogginDataDTO logginData;
 
-
+    @JsonView(JsonViews.Extended.class)
     @NotNull
     private Archive archive;
 
